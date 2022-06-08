@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "my-nest-lib": "libs/my-nest-lib",
+    "nest-app-second": "apps/nest-app-second",
     "nest-nx": "apps/nest-nx"
   }
 }
