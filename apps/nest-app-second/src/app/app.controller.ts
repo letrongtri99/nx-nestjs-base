@@ -11,7 +11,6 @@ import { AppService } from './app.service';
 import { LocalAuthGuard } from './guards/local-auth/local-auth.guard';
 import { AuthService } from './modules/auth/auth.service';
 import { JwtAuthGuard } from './guards/jwt/jwt-auth.guard';
-import { Comment as CommentModel } from '@prisma/client';
 
 @Controller()
 export class AppController {
@@ -35,12 +34,5 @@ export class AppController {
   @Get('profile')
   getProfile(@Request() req) {
     return req.body;
-  }
-
-  @Post('createCommentTest')
-  async signupUser(
-    @Body() commentData: { id: string; comment: string }
-  ): Promise<CommentModel> {
-    return this.authService.createCommentTest(commentData);
   }
 }

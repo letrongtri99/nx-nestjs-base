@@ -7,7 +7,6 @@ import { LocalStrategy } from '../../guards/local-auth/local.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from '../../guards/jwt/jwt.strategy';
 import { Secret } from '@my-nest-lib/constants';
-import { PrismaService } from '@my-nest-lib/services/prisma';
 
 @Module({
   imports: [
@@ -18,7 +17,7 @@ import { PrismaService } from '@my-nest-lib/services/prisma';
       signOptions: { expiresIn: '60m' },
     }),
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy, PrismaService],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
   exports: [AuthService],
 })
